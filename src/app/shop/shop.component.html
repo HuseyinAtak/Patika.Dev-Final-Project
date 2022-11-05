@@ -1,6 +1,46 @@
-<p>
-    {{products.length}}
-</p>
-<p>
-    {{categories.length}}
-</p>
+<navbar></navbar>
+
+<div class="container  pt-3 mb-5">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="list-group">
+                
+                <a *ngFor="let c of categories" (click)="changeCategory(c)" 
+                href="#"  
+                id="{{c.id}}" 
+                class="list-group-item list-group-item-action"
+                [class.active]="c==selectedCategory">
+                {{c.name}}</a>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="row">
+                <ng-container *ngFor="let p of products">
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="{{p.imageUrl}}" alt="{{p.name}}">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="">
+                                        {{p.name}}
+                                    </a>
+                                </h4>
+                                <small class="text-muted">
+                                    <i class="fa-solid fa-turkish-lira-sign"></i>{{p.price}}
+                                </small>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button class="btn btn-outline-primary ">
+                                    Detay
+                                </button>
+                                <button class="btn btn-outline-primary  ms-2">
+                                    Sepete Ekle
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
