@@ -11,6 +11,9 @@ import { ProductRepository } from "../model/product.repository";
 export class ShopComponent{
  
      public selectedCategory : Category |null =null;
+     public productsPerPage = 6;
+     public selectedPage = 1;
+     
 
 
     constructor(
@@ -18,13 +21,27 @@ export class ShopComponent{
         private categoryRepository: CategoryRepository){}
 
         get products():Product[]{
-            return this.productRepository.getProducts();
+            let index = (this.selectedPage-1)*this.productsPerPage;
+            return this.productRepository
+            .getProducts(this.selectedCategory)
+            .slice(index,index+this.productsPerPage);
         }
         get categories():Category[]{
             return this.categoryRepository.getCategories();
         }
-        changeCategory(newCategory:Category  ){
+        changeCategory(newCategory:Category | null ){
             this.selectedCategory=newCategory;
+        }
+     
+        get pageNumbers(): number[]{
+            return Array(Math.ceil(this.productRepository
+                .getProducts(this.selectedCategory).length/this.productsPerPage))
+                .fill(0)
+                .map((a,i)=>i+1);
+            }
+     
+        changePage(p:number){
+            this.selectedPage= p;
         }
 
 

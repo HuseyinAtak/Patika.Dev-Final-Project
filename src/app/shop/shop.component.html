@@ -4,7 +4,10 @@
     <div class="row">
         <div class="col-md-3">
             <div class="list-group">
-                
+                <a href="#"
+                class="list-group-item list-group-item-action"
+                (click)="changeCategory(null)">
+                Tum Kategoriler</a>
                 <a *ngFor="let c of categories" (click)="changeCategory(c)" 
                 href="#"  
                 id="{{c.id}}" 
@@ -15,6 +18,11 @@
         </div>
         <div class="col-9">
             <div class="row">
+                <div class="coll-md-12">
+                    <div class="alert alert-primary">
+                        {{products.length}} Tane Urun Bulundu.
+                    </div>
+                </div>
                 <ng-container *ngFor="let p of products">
                     <div class="col-md-4">
                         <div class="card mb-3">
@@ -40,6 +48,19 @@
                         </div>
                     </div>
                 </ng-container>
+                <div class="row mt-3">
+                    <div class="col">
+                        <div class="btn-group">
+                            <button 
+                            *ngFor="let page of pageNumbers"
+                            (click)="changePage(page)" 
+                            class="btn btn-outline-primary"
+                            [class.active]="page==selectedPage">
+                            {{page}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
