@@ -3,17 +3,26 @@
 <div class="container  pt-3 mb-5">
     <div class="row">
         <div class="col-md-3">
+            
+            
+            <cart-summary></cart-summary>
+            
+            
+            
             <div class="list-group">
-                <a href="#"
-                class="list-group-item list-group-item-action"
-                (click)="changeCategory(null)">
-                Tum Kategoriler</a>
-                <a *ngFor="let c of categories" (click)="changeCategory(c)" 
-                href="#"  
-                id="{{c.id}}" 
-                class="list-group-item list-group-item-action"
-                [class.active]="c==selectedCategory">
-                {{c.name}}</a>
+                <button 
+                    class="list-group-item list-group-item-action"
+                    (click)="changeCategory(null)">
+                    Tum Kategoriler
+                </button>
+                
+                <button 
+                    *ngFor="let c of categories" (click)="changeCategory(c)" 
+                    id="{{c.id}}" 
+                    class="list-group-item list-group-item-action"
+                    [class.active]="c==selectedCategory">
+                    {{c.name}}
+                </button>
             </div>
         </div>
         <div class="col-9">
@@ -41,7 +50,9 @@
                                 <button class="btn btn-outline-primary ">
                                     Detay
                                 </button>
-                                <button class="btn btn-outline-primary  ms-2">
+                                <button 
+                                (click)="addProductToCart(p)"
+                                class="btn btn-outline-primary  ms-2">
                                     Sepete Ekle
                                 </button>
                             </div>
