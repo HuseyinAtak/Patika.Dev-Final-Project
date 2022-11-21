@@ -1,29 +1,61 @@
-<header class="p-3 text-bg-dark">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        
-        <h1> 
-          <a href="#" class="nav-link px-2 text-primary">Alev Ticaret</a>
-        </h1>
+<div class="top-area">
+  <div class="header-area">
+    <!-- Start Navigation -->
+      <div class="wrap-sticky" style="height: 78px;"><nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy on menu-center no-full" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
 
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-white">Ana Sayfa</a></li>
-          <li><a href="#" class="nav-link px-2 text-secondary">Markalar</a></li>
-          <li><a href="#" class="nav-link px-2 text-secondary">Urunler</a></li>
-          <li><a href="#" class="nav-link px-2 text-secondary">Iletisim</a></li>
-          <li><a href="#" class="nav-link px-2 text-secondary">Hakkimizda</a></li>
-          <li><a href="#" class="nav-link px-2 text-secondary">Admin Ekleme</a></li>
-        </ul>
+          <div class="container">            
+              <!-- Start Atribute Navigation -->
+              <div class="attr-nav">
+                  <ul>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          Sepet
+            <span class="badge badge-bg-1">1</span>
+                      </a>
+                      <ul class="dropdown-menu cart-list s-cate animated fadeOutUp" style="display: none; opacity: 1;">
+                          
+                        <li class="single-cart-list">
+                              <a href="#" class="photo"><img src="assets/images/collection/arrivals1.png" class="cart-thumb" alt="image"></a>
+                              <div class="cart-list-txt">
+                                <h6><a href="#">arm <br> chair</a></h6>
+                                <p>1 x - <span class="price">$180.00</span></p>
+                              </div><!--/.cart-list-txt-->
+                              <div class="cart-close">
+                                <span class="lnr lnr-cross"></span>
+                              </div><!--/.cart-close-->
+                          <li class="total">
+                              <span>Total: $0.00</span>
+                              <button class="btn-cart pull-right" onclick="window.location.href='#'">view cart</button>
+                          </li>
+                      </ul>
+                  </li>
+                  
+                  </ul>
+              </div><!--/.attr-nav-->
+              <!-- End Atribute Navigation -->
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
-        </form>
+              <!-- Start Header Navigation -->
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                      <i class="fa fa-bars"></i>
+                  </button>
+                  <a class="navbar-brand" href="#">Mell<span>mazing</span>.</a>
 
-        <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Kayit Ol</button>
-          <button type="button" class="btn btn-warning me-2">Giris Yap</button>
-          <button type="button" class="btn btn-danger">Cikis Yap</button>
-        </div>
-      </div>
-    </div>
-  </header>
+              </div><!--/.navbar-header-->
+              <!-- End Header Navigation -->
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                  <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
+                      <li class="scroll active"><a href="#home">Ana Sayfa</a></li>
+                      <li class="scroll"><a href="#new-arrivals">Hakkimda</a></li>
+                      <li class="scroll"><a href="#feature">Urunler</a></li>
+                      <li class="scroll"><a href="#blog">Egitimler</a></li>
+                      <li class="scroll"><a href="#newsletter">Iletisim</a></li>
+                  </ul><!--/.nav -->
+              </div><!-- /.navbar-collapse -->
+          </div><!--/.container-->
+      </nav></div><!--/nav-->
+      <!-- End Navigation -->
+  </div><!--/.header-area-->
+</div>
