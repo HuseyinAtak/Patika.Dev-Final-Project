@@ -51,7 +51,6 @@ export class ShopComponent{
 
         addProductToCart(product:Product){
             this.cart.addItem(product);
-            this.router.navigateByUrl('/cart')
         }
 
 

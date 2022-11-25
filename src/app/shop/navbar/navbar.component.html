@@ -8,24 +8,29 @@
               <div class="attr-nav">
                   <ul>
                     <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                          Sepet
-            <span class="badge badge-bg-1">1</span>
+                      <a  class="dropdown-toggle" data-toggle="dropdown">
+                          <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="badge badge-bg-1">{{cart.itemCount}}</span>
                       </a>
-                      <ul class="dropdown-menu cart-list s-cate animated fadeOutUp" style="display: none; opacity: 1;">
-                          
+                      <ul *ngIf="cart.items.length>0" class="dropdown-menu cart-list s-cate animated fadeOutUp" style="display: none; opacity: 1;">
+                          <ng-container *ngFor="let item of cart.items" >
+
                         <li class="single-cart-list">
-                              <a href="#" class="photo"><img src="assets/images/collection/arrivals1.png" class="cart-thumb" alt="image"></a>
-                              <div class="cart-list-txt">
-                                <h6><a href="#">arm <br> chair</a></h6>
-                                <p>1 x - <span class="price">$180.00</span></p>
-                              </div><!--/.cart-list-txt-->
-                              <div class="cart-close">
-                                <span class="lnr lnr-cross"></span>
-                              </div><!--/.cart-close-->
+                          <a href="#" class="photo"><img src="{{item.product.imageUrl}}" class="cart-thumb" alt="image"></a>
+                          <div class="cart-list-txt">
+                            <h6><a href="#">{{item.product.name}}</a></h6>
+                            <p>{{item.quantity}} x - <span class="price"> {{item.product.price}}</span>₺ </p>
+                          </div><!--/.cart-list-txt-->
+                          <div class="cart-close">
+                            <button class="btn btn-danger btn-sm" (click)="cart.removeItem(item.product.id)">
+                              <i class="fa fa-times fa-fw"></i>
+                            </button>
+                          </div><!--/.cart-close-->
+                        </li>
+                          </ng-container>
                           <li class="total">
-                              <span>Total: $0.00</span>
-                              <button class="btn-cart pull-right" onclick="window.location.href='#'">view cart</button>
+                              <span>₺{{cart.total}}</span>
+                              <button routerLink="/cartDetail" class="btn-cart pull-right">Sepete Git</button>
                           </li>
                       </ul>
                   </li>
@@ -47,11 +52,11 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
                   <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
-                      <li class="scroll active"><a href="#home">Ana Sayfa</a></li>
-                      <li class="scroll"><a href="#new-arrivals">Hakkimda</a></li>
-                      <li class="scroll"><a href="#feature">Urunler</a></li>
-                      <li class="scroll"><a href="#blog">Egitimler</a></li>
-                      <li class="scroll"><a href="#newsletter">Iletisim</a></li>
+                      <li class="scroll active"><a routerLink="/shop">Ana Sayfa</a></li>
+                      <li class="scroll"><a routerLink="/about">Hakkimda</a></li>
+                      <li class="scroll"><a routerLink="/productDetail">Urunler</a></li>
+                      <li class="scroll"><a routerLink="/educations">Egitimler</a></li>
+                      <li class="scroll"><a routerLink="/contact">Iletisim</a></li>
                   </ul><!--/.nav -->
               </div><!-- /.navbar-collapse -->
           </div><!--/.container-->

@@ -8,11 +8,12 @@ import { CartSummaryComponent } from './cart-summary/cart-summary.component';
 import { CartDetailComponent } from "./cart-detail/cart-detail.component";
 import { CheckoutComponent } from "./checkout/checkout.component";
 import { RouterModule } from "@angular/router";
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
     imports: [ModelModule,BrowserModule, FormsModule,RouterModule],
-    declarations:[ShopComponent, NavbarComponent, CartSummaryComponent,CartDetailComponent,CheckoutComponent],
-    exports:[ShopComponent,CartDetailComponent,CheckoutComponent]
+    declarations:[ShopComponent, CartSummaryComponent,CheckoutComponent],
+    exports:[ShopComponent,CheckoutComponent]
 })
 export class ShopModule{}

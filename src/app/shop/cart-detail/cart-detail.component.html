@@ -1,9 +1,7 @@
-<navbar></navbar>
-
-<div class="container mb-5 mt-4">
+<div class="container cartDetail" style="margin-top: 6% ;">
 
 
-    <h1 class="mb-2">Alisveris Sepeti</h1>
+    <h1 class="mb-2">Sepete Eklenen Urunler.</h1>
     <div class="row">
         <div class="col-8">
             <ng-container *ngIf="cart.itemCount>0" >
@@ -25,11 +23,12 @@
                                 <img src="{{item.product.imageUrl}}" width="80px">
                             </td>
                             <td>{{item.product.name}}</td>
-                            <td>{{item.product.price}}Tl</td>
+                            <td>{{item.product.price}}TL</td>
                             <td>{{item.quantity}}</td>
-                            <td>{{item.quantity*item.product.price}} Tl</td>
+                            
+                            <td>{{item.quantity*item.product.price}} TL</td>
                             <td>
-                                <button class="btn btn-danger btn-sm">
+                                <button class="btn btn-danger btn-sm" (click)="cart.removeItem(item.product.id)" >
                                     <i class="fa fa-times fa-fw"></i>
                                 </button>
                             </td>
@@ -59,7 +58,7 @@
                     <tbody>
                         <tr>
                             <th>Toplam</th>
-                            <td>{{cart.total}}Tl</td>
+                            <td>{{cart.total}}TL</td>
                         </tr>
                     </tbody>
                 </table>
