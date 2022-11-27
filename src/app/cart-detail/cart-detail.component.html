@@ -4,7 +4,7 @@
     <h1 class="mb-2">Sepete Eklenen Urunler.</h1>
     <div class="row">
         <div class="col-8">
-            <ng-container *ngIf="cart.itemCount>0" >
+            <ng-container *ngIf="cart && cart.itemCount>0" >
                 
                 <table class="table table-hover">
                     <thead>
@@ -40,7 +40,7 @@
 
 
 
-            <ng-container *ngIf="cart.itemCount==0">
+            <ng-container *ngIf="cart && cart.itemCount==0">
                 <div class="alert alert-warning mt-3">
                     Sepetinizde Urun Yoktur. <br>
                     <button routerLink="/shop" class="btn ps-0 text-primary">
@@ -50,7 +50,7 @@
             </ng-container>
         </div>
         <div class="col-4">
-            <ng-container *ngIf="cart.itemCount>0">
+            <ng-container *ngIf="cart && cart.itemCount>0">
                 <div class="text-left">
                     <h4>Alisveris Ozeti</h4>
                 </div>

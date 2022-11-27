@@ -7,6 +7,7 @@ export class Cart{
 public items:CartItem[]=[];
 public itemCount: number=0;
 public total:number = 0;
+public username:string="";
 
     addItem(product:Product, quantity:number=1){
         let item=this.items.find(i=>i.product.id==product.id);

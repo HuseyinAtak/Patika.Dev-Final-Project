@@ -9,10 +9,13 @@
                   <ul>
                     <li class="dropdown">
                       <a  class="dropdown-toggle" data-toggle="dropdown">
-                          <i class="fa-solid fa-bag-shopping"></i>
+                        <a routerLink="/cartDetail" class="text-secondary">
+                          <i class="fa-solid fa-bag-shopping scroll"></i>
+                        </a> 
+
                         <span class="badge badge-bg-1">{{cart.itemCount}}</span>
                       </a>
-                      <ul *ngIf="cart.items.length>0" class="dropdown-menu cart-list s-cate animated fadeOutUp" style="display: none; opacity: 1;">
+                      <ul *ngIf="cart && cart.items && cart.items.length>0" class="dropdown-menu cart-list s-cate animated fadeOutUp" style="display: none; opacity: 1;">
                           <ng-container *ngFor="let item of cart.items" >
 
                         <li class="single-cart-list">
@@ -34,9 +37,33 @@
                           </li>
                       </ul>
                   </li>
-                  
+                  <li class="dropdown">
+                    <a  class="dropdown-toggle" data-toggle="dropdown">
+                      <a class="text-secondary">
+                        {{cart.username}}
+                      </a>
+                    </a>
+                    <ul *ngIf="cart.username" class="dropdown-menu cart-list s-cate animated fadeOutUp" style="display: none; opacity: 1;">
+                        
+                      <li class="single-cart-list">
+                        <div class="cart-list-txt">
+                          
+                        </div><!--/.cart-list-txt-->
+                        <div class="cart-close">
+                          <button class="btn btn-danger btn-sm" (click)="clearToken()">
+                            <i class="fa fa-times fa-fw"></i>
+                          </button>
+                        </div><!--/.cart-close-->
+                      </li>
+                        <li class="total">
+                           
+                            <button (click)="clearToken()" class="btn text-center">Oturumu Sonlandir.</button>
+                        </li>
+                    </ul>
+                </li>
                   </ul>
               </div><!--/.attr-nav-->
+              
               <!-- End Atribute Navigation -->
 
               <!-- Start Header Navigation -->
@@ -44,7 +71,7 @@
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                       <i class="fa fa-bars"></i>
                   </button>
-                  <a class="navbar-brand" href="#">Mell<span>mazing</span>.</a>
+                  <a class="navbar-brand scroll" href="/#">Mell<span>mazing</span>.</a>
 
               </div><!--/.navbar-header-->
               <!-- End Header Navigation -->
@@ -52,11 +79,10 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
                   <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
-                      <li class="scroll active"><a routerLink="/shop">Ana Sayfa</a></li>
-                      <li class="scroll"><a routerLink="/about">Hakkimda</a></li>
-                      <li class="scroll"><a routerLink="/productDetail">Urunler</a></li>
-                      <li class="scroll"><a routerLink="/educations">Egitimler</a></li>
-                      <li class="scroll"><a routerLink="/contact">Iletisim</a></li>
+                      <li class="scroll"><a (click)="routing('shop')">Ana Sayfa</a></li>
+                      <li class="scroll"><a (click)="routing('about')">Hakkimda</a></li>
+                      <li class="scroll"><a (click)="routing('productDetail')">Urunler</a></li>
+                      <li class="scroll"><a (click)="routing('education')">Egitimler</a></li>
                   </ul><!--/.nav -->
               </div><!-- /.navbar-collapse -->
           </div><!--/.container-->

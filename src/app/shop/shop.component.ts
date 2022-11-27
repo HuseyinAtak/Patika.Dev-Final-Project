@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
+import { AuthService } from "../model/auth.service";
 import { Cart } from "../model/cart.model";
 import { Category } from "../model/category.mode";
 import { CategoryRepository } from "../model/category.repository";
@@ -16,13 +17,10 @@ export class ShopComponent{
      public productsPerPage = 6;
      public selectedPage = 1;
      
-
-
     constructor(
         private productRepository: ProductRepository,
         private categoryRepository: CategoryRepository,
-        private cart:Cart,
-        private router:Router
+        private cart:Cart
         ){}
 
         get products():Product[]{
@@ -52,6 +50,5 @@ export class ShopComponent{
         addProductToCart(product:Product){
             this.cart.addItem(product);
         }
-
-
+        
     }

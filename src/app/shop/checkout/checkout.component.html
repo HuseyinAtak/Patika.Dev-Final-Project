@@ -1,3 +1,41 @@
-<div class="alert alert-success">
-    Checkout kompo
+
+<div class="container pt-100 mb-5" style="margin-top: 6% ;">
+    <div *ngIf="orderSent" class="m-2 text-center">
+        <h2>Tesekkurler</h2>
+        <p>Siparis Kayit Edildi.</p>
+        <button class="btn btn-primary" routerLink="/shop">
+            Alisverise Devam Et
+        </button>
+    </div>
+    <form *ngIf="!orderSent" #form="ngForm" (ngSubmit)="submitOrder(form)">
+        <div class="form-group">
+            <label >Isim</label>
+            <input class="form-control" #name="ngModel" name="name" [(ngModel)]="order.name" required>
+            <span *ngIf="submitted && name.invalid" class="text-danger">Lutfen adinizi giriniz.</span>
+        </div>
+        <div class="form-group">
+            <label >Adres</label>
+            <input class="form-control" #address="ngModel" name="address" [(ngModel)]="order.address" required>
+            <span *ngIf="submitted && address.invalid" class="text-danger">Lutfen adresinizi giriniz.</span>
+        </div>
+        <div class="form-group">
+            <label >Sehir</label>
+            <input class="form-control" #city="ngModel" name="city" [(ngModel)]="order.city" required>
+            <span *ngIf="submitted && city.invalid" class="text-danger">Lutfen sehrinizi giriniz.</span>
+        </div>
+        <div class="form-group">
+            <label >Telefon</label>
+            <input class="form-control" #phone="ngModel" name="phone" [(ngModel)]="order.phone" required>
+            <span *ngIf="submitted && phone.invalid" class="text-danger">Lutfen telefonunuzu giriniz.</span>
+        </div>
+        <div class="form-group">
+            <label >Mail</label>
+            <input class="form-control" #email="ngModel" name="email" [(ngModel)]="order.email" required>
+            <span *ngIf="submitted && email.invalid" class="text-danger">Lutfen mailinizi giriniz.</span>
+        </div>
+        <div class="text-center">
+        <button type="submit" class="btn btn-primary">Tamamla</button>
+        <button type="submit" routerLink="/shop" class="btn btn-primary ms-2">Alisverise Devam Et</button>
+        </div>
+    </form>
 </div>
