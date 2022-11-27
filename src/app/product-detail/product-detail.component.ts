@@ -18,6 +18,7 @@ export class ProductDetailComponent implements OnInit {
   public selectedPage = 1;
   allProje:boolean=true;
 public selectedProduct: Product |null =null;
+  public filterText:string="";
   
   
 

@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ModelModule } from './model/model.module';
 import { CartSummaryComponent } from './shop/cart-summary/cart-summary.component';
+import { ProductFilterPipe } from './pipe/product-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CartSummaryComponent } from './shop/cart-summary/cart-summary.component
     AuthComponent,
     ShopComponent, 
     CartSummaryComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ProductFilterPipe
   ],
   imports: [
     BrowserModule,

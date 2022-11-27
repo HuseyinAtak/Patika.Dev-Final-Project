@@ -58,7 +58,11 @@
                 </span>
                 <span *ngIf="cart.itemCount==0"> Kartinizda Henuz Urun Yoktur.</span>
             </div>
-            
+                
+    <div class="mb-3">
+      <input  type="text" class="form-control" [(ngModel)]="filterText" placeholder="Search...">
+      <small *ngIf="filterText" class="text-muted">Aradiginiz Kelime: {{filterText}}</small>
+  </div>
             
             
             <div class="list-group">
@@ -84,7 +88,7 @@
                         {{products.length}} Tane Urun Bulundu.
                     </div>
                 </div>
-                <ng-container *ngFor="let p of products">
+                <ng-container *ngFor="let p of products | productFilter:filterText">
                     <div class="col-sm-4">
                        
 							<div class="single-new-arrival">

@@ -7,7 +7,7 @@ import { Cart } from 'src/app/model/cart.model';
   styleUrls: ['./cart-summary.component.css']
 })
 export class CartSummaryComponent implements OnInit {
-
+  
   constructor(public cart:Cart) { }
 
   ngOnInit(): void {
